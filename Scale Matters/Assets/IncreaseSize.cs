@@ -18,7 +18,10 @@ public class IncreaseSize : MonoBehaviour
 
     public void Increse()
     {
-        scaler.GetComponent<Transform>().localScale += new Vector3(1, 1, 0);
-        scaler.GetComponent<Transform>().localPosition += new Vector3(0, 1, 0);
+        if (scaler.GetComponent<Transform>().localScale != new Vector3(4, 4, 1))
+        {
+            scaler.GetComponent<Transform>().localScale += new Vector3(1, 1, 0);
+            scaler.GetComponent<Transform>().localPosition += new Vector3(0, 4.25f, 0);
+        }
     }
 }

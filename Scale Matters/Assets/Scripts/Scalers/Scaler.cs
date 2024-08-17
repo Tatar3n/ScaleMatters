@@ -5,7 +5,7 @@ using UnityEngine;
 public class Scaler : ScalingObject
 {
     public float speed = 2f; 
-    public float distance = 5f; 
+    public float distance = 5f;
     public float minPauseTime = 1f; 
     public float maxPauseTime = 3f;
     public Transform startPosition;
@@ -19,7 +19,7 @@ public class Scaler : ScalingObject
     void Start()
     {
         scalerTransform = GetComponent<Transform>();
-        scalerTransform.position = new Vector3(startPosition.position.x + Random.Range(-distance, distance), startPosition.position.y, 0);
+        scalerTransform.position = new Vector3(startPosition.position.x + Random.Range(-distance, distance), startPosition.position.y + Random.Range(3f, 3.5f), 0);
 
         if ((int)Random.Range(0f, 2f) == 0)
             movingRight = true;
