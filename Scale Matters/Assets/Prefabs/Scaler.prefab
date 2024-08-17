@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5438515015710952837}
   - component: {fileID: 8089039380332165843}
   - component: {fileID: 8522338109445013107}
+  - component: {fileID: -9058400778197984291}
+  - component: {fileID: -1834847054386089171}
   m_Layer: 0
   m_Name: Scaler
   m_TagString: Untagged
@@ -97,9 +99,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efcdbe2a1b5f91646b8c73a225e71297, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scale: 0
   speed: 2
   distance: 15
   minPauseTime: 1
   maxPauseTime: 6
-  spawnRange: 15
   startPosition: {fileID: 1365528497555667935, guid: b17114d236b93e64aa6f6102ab5eaa72, type: 3}
+--- !u!61 &-9058400778197984291
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7973592381323526668}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.56, y: 2.56}
+    newSize: {x: 2.56, y: 2.56}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.56, y: 2.56}
+  m_EdgeRadius: 0
+--- !u!114 &-1834847054386089171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7973592381323526668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc7894732be9b10428dea59e09b3a2ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionButtonsPrefab: {fileID: 6093924331663252010, guid: 4d8219fe9a9243340a6b5ec1cc74c796, type: 3}

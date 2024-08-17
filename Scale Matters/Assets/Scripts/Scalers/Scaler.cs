@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Scaler : MonoBehaviour
+public class Scaler : ScalingObject
 {
     public float speed = 2f; 
     public float distance = 5f; 
@@ -37,6 +37,7 @@ public class Scaler : MonoBehaviour
         Rotate();
     }
 
+	#region STANDART_MOVEMENT
 	private void StandartMove()
     {
         if (canMove)
@@ -99,4 +100,7 @@ public class Scaler : MonoBehaviour
         yield return new WaitForSeconds(pauseDuration);
         canMove = true;
     }
+	#endregion 
+
+
 }
