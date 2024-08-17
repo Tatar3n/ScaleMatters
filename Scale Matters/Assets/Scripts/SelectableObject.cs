@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SelectableObject : MonoBehaviour
 {
@@ -19,22 +21,26 @@ public class SelectableObject : MonoBehaviour
     {
         if (!isButActive)
         {
-            ShowActionButtons();
-            isButActive = true;
+            ShowActionButtons();       
         }
         else
         {
             HideActionButtons();
-            isButActive = false;
         }
     }
 
     private void ShowActionButtons()
     {
+        isButActive = true;
+
         if (actionButtonsInstance == null)
         {
             actionButtonsInstance = Instantiate(actionButtonsPrefab);
             actionButtonsInstance.transform.SetParent(mainCamera.transform, false);
+            if (actionButtonsInstance != null)
+            {
+                actionButtonsInstance.GetComponent<IncreaseSize>().scaler = gameObject;
+            }
             PositionActionButtons();
         }
         actionButtonsInstance.SetActive(true);
@@ -42,6 +48,8 @@ public class SelectableObject : MonoBehaviour
 
     private void HideActionButtons()
     {
+        isButActive = false;
+
         if (actionButtonsInstance != null)
             actionButtonsInstance.SetActive(false);
     }

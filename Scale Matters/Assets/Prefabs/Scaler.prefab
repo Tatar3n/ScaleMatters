@@ -163,4 +163,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actionButtonsPrefab: {fileID: 6093924331663252010, guid: 4d8219fe9a9243340a6b5ec1cc74c796, type: 3}
-  mainCamera: {fileID: 852481231446808426, guid: aa608ea9c98fb354aa662ee68b568a81, type: 3}
