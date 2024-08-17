@@ -7,6 +7,7 @@ public class SelectableObject : MonoBehaviour
     public GameObject actionButtonsPrefab; 
     private GameObject actionButtonsInstance; 
     private Camera mainCamera;
+    private bool isButActive = false;
 
     private void Start()
     {
@@ -16,12 +17,16 @@ public class SelectableObject : MonoBehaviour
 
     private void OnMouseDown()
     {
-        ShowActionButtons();
-    }
-
-    private void OnMouseExit()
-    {
-        HideActionButtons();
+        if (!isButActive)
+        {
+            ShowActionButtons();
+            isButActive = true;
+        }
+        else
+        {
+            HideActionButtons();
+            isButActive = false;
+        }
     }
 
     private void ShowActionButtons()
