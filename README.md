@@ -1,1 +1,1 @@
-# ScaleMatters
+# Scale Matters
