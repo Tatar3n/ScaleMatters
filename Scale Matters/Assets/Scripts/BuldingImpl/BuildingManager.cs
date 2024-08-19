@@ -9,8 +9,14 @@ public class BuildingManager : MonoBehaviour
     public Tilemap tilemap;
     public LayerMask buildableLayer;
     public LayerMask constructionLayer;
+    public GameObject actualPrefab;
 
-    public void FixedUpdate()
+	private void Start()
+	{
+        actualPrefab = buildingPrefabs[0];
+    }
+
+	public void FixedUpdate()
     {
         //Debug.Log("Позиция мыши: " + Camera.main.ScreenToWorldPoint(Input.mousePosition));
     }
@@ -18,7 +24,8 @@ public class BuildingManager : MonoBehaviour
     public void OnMouseDown()
     {
         //Debug.Log("Позиция мыши: " + Input.mousePosition);
-        Build(buildingPrefabs[0], tilemap.WorldToCell(Camera.main.ScreenToWorldPoint(Input.mousePosition)));
+        if(WorldStatusData.worldStatus == WorldStatusData.WorldStatuses.BUILD)
+            Build(actualPrefab, tilemap.WorldToCell(Camera.main.ScreenToWorldPoint(Input.mousePosition)));
     }
 
     public bool CanBuildAt(Vector3Int cellPosition)

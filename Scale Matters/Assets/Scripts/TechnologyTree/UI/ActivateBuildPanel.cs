@@ -17,6 +17,7 @@ public class ActivateBuildPanel : MonoBehaviour
                 rectTransform.anchoredPosition = new Vector2(0, 0);
             });
             isWindowOpen = true;
+            WorldStatusData.worldStatus = WorldStatusData.WorldStatuses.BUILD;
         }
         else
         {
@@ -25,6 +26,7 @@ public class ActivateBuildPanel : MonoBehaviour
                 rectTransform.anchoredPosition = new Vector2(0, buildWindow.transform.position.y - buildWindow.GetComponent<RectTransform>().rect.height);
             });
             isWindowOpen = false;
+            WorldStatusData.worldStatus = WorldStatusData.WorldStatuses.BASE;
         }
     }
 }

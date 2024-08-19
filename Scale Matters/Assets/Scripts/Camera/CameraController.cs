@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class CameraController : MonoBehaviour
 {
@@ -17,16 +18,19 @@ public class CameraController : MonoBehaviour
         {
       
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector3 direction = mousePosition - lastMousePosition;
+            if (Physics2D.Raycast(mousePosition, Vector2.zero).collider == null && !EventSystem.current.IsPointerOverGameObject())
+            {
+                Vector3 direction = mousePosition - lastMousePosition;
 
-        
-            Vector3 newPosition = transform.position - direction * speed;
 
-    
-            newPosition.x = Mathf.Clamp(newPosition.x, minBounds.x, maxBounds.x);
-            newPosition.y = Mathf.Clamp(newPosition.y, minBounds.y, maxBounds.y);
+                Vector3 newPosition = transform.position - direction * speed;
 
-            transform.position = newPosition;
+
+                newPosition.x = Mathf.Clamp(newPosition.x, minBounds.x, maxBounds.x);
+                newPosition.y = Mathf.Clamp(newPosition.y, minBounds.y, maxBounds.y);
+
+                transform.position = newPosition;
+            }
         }
 
         lastMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
