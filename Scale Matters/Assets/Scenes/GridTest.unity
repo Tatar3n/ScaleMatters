@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 639270610}
   - component: {fileID: 639270609}
   - component: {fileID: 639270613}
+  - component: {fileID: 639270615}
   - component: {fileID: 639270612}
   - component: {fileID: 639270614}
   m_Layer: 6
@@ -677,8 +678,8 @@ MonoBehaviour:
   constructionLayer:
     serializedVersion: 2
     m_Bits: 128
---- !u!19719996 &639270614
-TilemapCollider2D:
+--- !u!61 &639270614
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -709,10 +710,40 @@ TilemapCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_MaximumTileChangeCount: 1000
-  m_ExtrusionFactor: 0
-  m_UseDelaunayMesh: 0
+  m_Offset: {x: 1, y: -0.5}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 36, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &639270615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639270607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58ffaf30d710bf84bbbd0c4247f7dda0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  previewObject:
+  - {fileID: 8496732281826506310, guid: 82d957963de8ab946a9fcaa6bf31eb64, type: 3}
+  tilemap: {fileID: 639270610}
+  buildableLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  constructionLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &854581187
 GameObject:
   m_ObjectHideFlags: 0
