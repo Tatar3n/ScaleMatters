@@ -25,7 +25,7 @@ public class BuildingManager : MonoBehaviour
     {
         // Проверка коллизий
         if (Physics2D.OverlapBox(tilemap.GetCellCenterWorld(cellPosition), new Vector2(1, 1), 0, buildableLayer) 
-            && !Physics2D.OverlapBox(tilemap.GetCellCenterWorld(cellPosition), new Vector2(2,1), 0, constructionLayer))
+            && !Physics2D.OverlapBox(tilemap.GetCellCenterWorld(cellPosition), new Vector2(1,3), 0, constructionLayer))
         {
             return true;
         }
